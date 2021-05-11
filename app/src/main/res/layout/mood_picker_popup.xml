@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/Gemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/loudlycrying"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Demoji" />
+
+    <ImageView
+        android:id="@+id/Hemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/udsmiling"
+        app:layout_constraintStart_toEndOf="@+id/Gemoji"
+        app:layout_constraintTop_toBottomOf="@+id/Eemoji" />
+
+    <ImageView
+        android:id="@+id/Iemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/fearful"
+        app:layout_constraintStart_toEndOf="@+id/Hemoji"
+        app:layout_constraintTop_toBottomOf="@+id/Femoji" />
+
+
+    <ImageView
+        android:id="@+id/Bemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:src="@drawable/angry"
+        app:layout_constraintStart_toEndOf="@+id/Aemoji"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Cemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:src="@drawable/mad"
+        app:layout_constraintStart_toEndOf="@+id/Bemoji"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/Demoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/sad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Aemoji" />
+
+    <ImageView
+        android:id="@+id/Eemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/weary"
+        app:layout_constraintStart_toEndOf="@+id/Demoji"
+        app:layout_constraintTop_toBottomOf="@+id/Bemoji" />
+
+    <ImageView
+        android:id="@+id/Femoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginLeft="1dp"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:src="@drawable/sick"
+        app:layout_constraintStart_toEndOf="@+id/Eemoji"
+        app:layout_constraintTop_toBottomOf="@+id/Cemoji" />
+
+    <ImageView
+        android:id="@+id/Aemoji"
+        android:layout_width="101dp"
+        android:layout_height="111dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:src="@drawable/smiling"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
