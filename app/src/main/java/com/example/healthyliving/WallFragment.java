@@ -27,6 +27,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class WallFragment extends Fragment {
@@ -35,10 +36,7 @@ public class WallFragment extends Fragment {
     FirebaseDatabase firebaseDatabase;
 
     String inputwallB, anonymousB = "false";
-    int count = 0;
     int entries;
-    int childCount;
-
 
     @Nullable
     @Override
@@ -76,15 +74,8 @@ public class WallFragment extends Fragment {
     public void onViewCreated(@NonNull @NotNull View view, @Nullable @org.jetbrains.annotations.Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button viewPost = (Button) view.findViewById(R.id.viewPost);
-        viewPost.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                getInput();
-            }
-        }
-        );
+        WallFragment wf = (WallFragment) getChildFragmentManager().findFragmentById(R.id.fragment_wall);
+        getInput();
     }
 
     //----------------------------Send wall message to DB method----------------------------------
@@ -150,12 +141,15 @@ public class WallFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                 list.clear();
+
                 for (DataSnapshot ds : snapshot.getChildren()) {
-                    //getting specific child branch "input"  to add in the list
-                    list.add(ds.child("input").getValue().toString());
+                    String strInput = ds.child("input").getValue().toString();
+                    String strName = ds.child("name").getValue().toString();
+                    String strCombined = strName + "\n" + strInput;
+
+                    list.add(strCombined);
                 }
                 adapter.notifyDataSetChanged();
-                //System.out.println(list);
             }
 
             //Single node display of text
@@ -170,6 +164,7 @@ public class WallFragment extends Fragment {
 
             }
         });
+
 
     }
 

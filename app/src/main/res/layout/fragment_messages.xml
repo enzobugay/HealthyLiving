@@ -7,13 +7,14 @@
 
     <CheckBox
         android:id="@+id/messagecheckBox"
-        android:layout_width="108dp"
-        android:layout_height="42dp"
+        android:layout_width="171dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
         android:checked="false"
         android:text="Anonymous"
         app:buttonTint="#919191"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
+        app:layout_constraintHorizontal_bias="0.13"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageinput" />
 
@@ -42,16 +43,16 @@
         android:id="@+id/divider5"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="12dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintTop_toBottomOf="@+id/textView6"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="24dp" />
 
     <Button
         android:id="@+id/messagesendbtn"
         android:layout_width="51dp"
         android:layout_height="113dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="392dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:backgroundTint="#FFFFFF"
@@ -60,20 +61,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/messageinput"
-        app:layout_constraintTop_toBottomOf="@+id/divider5"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:strokeColor="#000000" />
 
     <EditText
         android:id="@+id/messageinput"
         android:layout_width="312dp"
         android:layout_height="114dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="380dp"
         android:ems="10"
         android:hint="Send us a message!"
-        android:textColor="#8A8383"
         android:inputType="textPersonName"
+        android:textColor="#8A8383"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/divider5" />
 
@@ -81,10 +82,38 @@
         android:id="@+id/divider6"
         android:layout_width="match_parent"
         android:layout_height="1dp"
+        android:layout_marginTop="448dp"
         android:background="?android:attr/listDivider"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messagecheckBox" />
+
+    <TextView
+        android:id="@+id/textMessage"
+        android:layout_width="278dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="64dp"
+        android:background="#F5f5f5"
+        android:text="Your message here"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textMessage2"
+        android:layout_width="278dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="44dp"
+        android:text="Leaders reply here"
+        android:visibility="visible"
+        android:background="#dedede"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

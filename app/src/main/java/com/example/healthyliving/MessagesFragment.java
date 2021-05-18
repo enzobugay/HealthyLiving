@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,6 +30,7 @@ public class MessagesFragment extends Fragment {
     ProgressDialog progressDialog;
 
     String messageinputB, anonymousB = "false";
+    TextView message;
     int entries;
 
     @Nullable
@@ -71,6 +73,7 @@ public class MessagesFragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 entries = (int) snapshot.getChildrenCount(); //counts number of children under node "message'
+
             }
 
             @Override
@@ -83,7 +86,6 @@ public class MessagesFragment extends Fragment {
 
         messageinput = getView().findViewById(R.id.messageinput);
         messageinputB = messageinput.getText().toString().trim();
-
 
         if(messageinputB.isEmpty()){ //Validates if edittext has input value
             Toast.makeText(getActivity(), "Please enter a message", Toast.LENGTH_SHORT).show();
@@ -98,5 +100,9 @@ public class MessagesFragment extends Fragment {
                 databaseReference.child(String.valueOf(childentries)).child("name").setValue("Jose Bugay");
             }
         }
+
+
+
+
     }
 }
