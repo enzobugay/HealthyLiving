@@ -43,7 +43,7 @@
         android:layout_marginRight="5dp"
         android:ems="10"
         android:hint="Express yourself!"
-        android:inputType="textPersonName"
+        android:inputType="textCapSentences"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,8 +100,8 @@
 
     <ListView
         android:id="@+id/listView"
-        android:layout_width="405dp"
-        android:layout_height="450dp"
+        android:layout_width="407dp"
+        android:layout_height="418dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

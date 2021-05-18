@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
                             break;
 
                         case R.id.navigation_messages:
-                            selectedFragment = new MessagesFragment();
+                            selectedFragment = new MessagesFragmentA();
                             break;
                     }
 
