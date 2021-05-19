@@ -6,9 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,6 +25,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class MessagesFragment extends Fragment {
@@ -76,6 +83,7 @@ public class MessagesFragment extends Fragment {
         return view;
     }
 
+
     //----------------------------Send message to DB method----------------------------------
     public void sendMessage(){
 
@@ -105,6 +113,8 @@ public class MessagesFragment extends Fragment {
         else{
             databaseReference.child(String.valueOf(childentries)).child("input").setValue(messageinputB);
             databaseReference.child(String.valueOf(childentries)).child("time").setValue(ServerValue.TIMESTAMP); //Time is in EPOCH format. Need to convert for display (Variable is 'long')
+            //static message receiver for now
+            databaseReference.child(String.valueOf(childentries)).child("receiver").setValue("Leader");
             if (anonymousB == "true"){ //Sets the name if anonymous or not
                 databaseReference.child(String.valueOf(childentries)).child("name").setValue("Anonymous");
             }
@@ -125,4 +135,6 @@ public class MessagesFragment extends Fragment {
         fragmentTransaction.commit();
 
     }
+
+
 }

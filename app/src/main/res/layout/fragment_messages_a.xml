@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:id="@+id/fragment_message_a">
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -82,6 +83,7 @@
         app:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
 
     <ListView
+        android:id="@+id/listViewMessages"
         android:layout_width="411dp"
         android:layout_height="588dp"
         android:layout_marginTop="4dp"

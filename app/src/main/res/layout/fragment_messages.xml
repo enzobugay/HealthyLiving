@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_message"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -26,15 +27,15 @@
         android:layout_width="171dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
-        android:checked="false"
+        android:checked="true"
         android:text="Anonymous"
         app:buttonTint="#919191"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/messageinput"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.005" />
 
     <RelativeLayout
         android:id="@+id/relativeLayout2"
@@ -70,7 +71,7 @@
         android:id="@+id/messagesendbtn"
         android:layout_width="51dp"
         android:layout_height="113dp"
-        android:layout_marginTop="392dp"
+        android:layout_marginTop="92dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         app:backgroundTint="#FFFFFF"
@@ -86,15 +87,15 @@
         android:id="@+id/messageinput"
         android:layout_width="312dp"
         android:layout_height="114dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:layout_marginTop="380dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="28dp"
         android:ems="10"
         android:hint="Send us a message!"
         android:inputType="textPersonName"
         android:textColor="#8A8383"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider5" />
+        app:layout_constraintTop_toBottomOf="@+id/messageReceiver" />
 
     <View
         android:id="@+id/divider6"
@@ -108,30 +109,26 @@
         app:layout_constraintTop_toBottomOf="@+id/messagecheckBox" />
 
     <TextView
-        android:id="@+id/textMessage"
-        android:layout_width="278dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="64dp"
-        android:background="#F5f5f5"
-        android:text="Your message here"
-        android:visibility="visible"
+        android:id="@+id/messageReceiver"
+        android:layout_width="348dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="28dp"
+        android:text="Receiver"
+        android:textStyle="bold"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
-    <TextView
-        android:id="@+id/textMessage2"
-        android:layout_width="278dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="44dp"
-        android:text="Leaders reply here"
-        android:visibility="visible"
-        android:background="#dedede"
+    <ListView
+        android:id="@+id/listViewSentMessages"
+        android:layout_width="342dp"
+        android:layout_height="382dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.12"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/messagecheckBox" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

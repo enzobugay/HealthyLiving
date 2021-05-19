@@ -35,6 +35,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import static androidx.core.content.ContextCompat.getSystemService;
 
@@ -98,7 +99,7 @@ public class WallFragment extends Fragment {
     //----------------------------Send wall message to DB method----------------------------------
     public void postInput(){
 
-                firebaseDatabase = FirebaseDatabase.getInstance("https://healthyliving-da296-default-rtdb.asia-southeast1.firebasedatabase.app/");
+        firebaseDatabase = FirebaseDatabase.getInstance("https://healthyliving-da296-default-rtdb.asia-southeast1.firebasedatabase.app/");
         DatabaseReference databaseReference = firebaseDatabase.getReference("/wall");
 
         databaseReference.addValueEventListener(new ValueEventListener() {
@@ -157,6 +158,7 @@ public class WallFragment extends Fragment {
         progressDialog.show();
 
         ListView listView = getView().findViewById(R.id.listView);
+        //Creating a list to store the data values from database and passed through arrayadapter
         ArrayList <String> list = new ArrayList<String>();
         ArrayAdapter adapter = new ArrayAdapter<String> (getActivity(), R.layout.list_item,list);
         listView.setAdapter(adapter);
@@ -206,9 +208,12 @@ public class WallFragment extends Fragment {
                         if (ds.child("name").exists()){
                         String strName = ds.child("name").getValue().toString();
                         String strCombined = strName + "\n" + strInput;
+                        //storing values to a list
                         list.add(strCombined);
                         }
                     }
+                    //reversing the list order
+                    Collections.reverse(list);
                     adapter.notifyDataSetChanged();
             }
 
